@@ -112,6 +112,34 @@ body {
     transform: scale(1.05);
 }
 
+.prova-social {
+    background-color: #f0f0f0;
+}
+
+.prova-social h2 {
+    font-family: 'Playfair Display', serif;
+    color: #be123c;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    padding-top: 20px;
+}
+.card-depoimentos {
+    background-color: #ede5db;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.card-depoimentos p {
+    font-style: italic;
+    color: #555;
+    padding: 10px;
+}
+
+.estrelas {
+    color: #e6c408; /* Cor dourada para as estrelas */
+    padding-bottom: 10px;
+    font-size: 14px;
+}
 /* MEDIA QUERY PARA COMPUTADOR */
 @media (min-width: 1024px) {
     .container-servicos {
