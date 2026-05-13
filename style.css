@@ -1,0 +1,185 @@
+/* Configurações Gerais */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafaf9;
+}
+
+/* CSS PARA CELULAR (Mobile First) */
+
+.container-header {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column; /* Um embaixo do outro no celular */
+    align-items: center;    /* Centraliza tudo */
+    gap: 20px;              /* Espaço entre a logo e o menu */
+    background-color: #ede5db;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: #be123c;
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;       /* Se não couber na linha, ele quebra */
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilo do botão de contato no mobile */
+.btn-contato {
+    background-color: #be123c;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Estilo dos Cards - MOBILE FIRST */
+.servicos {
+    padding: 40px 20px;
+}
+
+.container-servicos {
+    display: flex;
+    flex-direction: column; /* No celular, um embaixo do outro */
+    gap: 30px;
+}
+
+.card-servico {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-servico img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+.conteudo-card {
+    padding: 20px;
+}
+
+.conteudo-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #be123c;
+    margin-bottom: 10px;
+}
+
+.conteudo-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.preco {
+    display: block;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* O BOTÃO DE AGENDAMENTO */
+.btn-agendar {
+    display: inline-block;
+    background-color: #be123c;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-agendar:hover {
+    transform: scale(1.05);
+}
+
+/* MEDIA QUERY PARA COMPUTADOR */
+@media (min-width: 1024px) {
+    .container-servicos {
+        flex-direction: row; /* Lado a lado no PC */
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .card-servico {
+        flex: 1; /* Todos os cards ficam com o mesmo tamanho */
+    }
+}
+/* --------------------------------------------------- */
+/* 3. @MEDIA QUERY (Para telas maiores/Desktop)        */
+/* --------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .container-header {
+        flex-direction: row;     /* Volta a ficar lado a lado */
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 50px;
+    }
+
+    .menu-navegacao ul {
+        gap: 30px;               /* Aumenta o espaço entre os links */
+    }
+
+    .menu-navegacao a {
+        font-size: 14px;         /* Fonte levemente maior no PC */
+    }
+}
+
+/* Estilo da Logo */
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: #be123c;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Estilo do Menu */
+.menu-navegacao ul {
+    list-style: none;     /* Tira as bolinhas do li */
+    margin: 0;
+    padding: 0;
+    display: flex;        /* Coloca os li lado a lado também */
+    gap: 30px;            /* Espaço entre os links */
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.menu-navegacao a:hover {
+    color: #be123c;
+}
+
+/* Botão de destaque no menu */
+.btn-contato {
+    background-color: #be123c;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
