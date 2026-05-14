@@ -135,28 +135,39 @@ body {
     padding: 10px;
 }
 
+.container-depoimentos {
+    display: flex;
+    flex-direction: column; /* No celular, um embaixo do outro */
+    gap: 20px;
+    padding: 20px;
+}
 .estrelas {
     color: #e6c408; /* Cor dourada para as estrelas */
     padding-bottom: 10px;
     font-size: 14px;
 }
-/* MEDIA QUERY PARA COMPUTADOR */
-@media (min-width: 1024px) {
-    .container-servicos {
-        flex-direction: row; /* Lado a lado no PC */
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .card-servico {
-        flex: 1; /* Todos os cards ficam com o mesmo tamanho */
-    }
-}
-/* --------------------------------------------------- */
-/* 3. @MEDIA QUERY (Para telas maiores/Desktop)        */
-/* --------------------------------------------------- */
 
+.rodape {
+    display: flex;
+    gap : 20px;
+    flex-direction: column;
+    text-align: center;
+    color: #e9e3e3;
+    font-size: 30px;
+}
+.faq{
+    background-color: #a96464;
+    height: 100px;
+}
+.localizacao-horarios{
+    background-color: #5a3333;
+}
+.sobre-nos{
+    background-color: #e6af57;
+}
+.politica-privacidade{
+    background-color: #6c9a78;
+}
 @media (min-width: 768px) {
     .container-header {
         flex-direction: row;     /* Volta a ficar lado a lado */
@@ -172,6 +183,13 @@ body {
     .menu-navegacao a {
         font-size: 14px;         /* Fonte levemente maior no PC */
     }
+      .container-depoimentos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+}
 }
 
 /* Estilo da Logo */
@@ -211,3 +229,29 @@ body {
     padding: 10px 20px;
     border-radius: 50px;
 }
+
+/* MEDIA QUERY PARA COMPUTADOR */
+@media (min-width: 1024px) {
+    .container-servicos {
+        flex-direction: row; /* Lado a lado no PC */
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .card-servico {
+        flex: 1; /* Todos os cards ficam com o mesmo tamanho */
+    }
+    .container-depoimentos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+}
+
+/* --------------------------------------------------- */
+/* 3. @MEDIA QUERY (Para telas maiores/Desktop)        */
+/* --------------------------------------------------- */
+
