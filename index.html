@@ -9,30 +9,31 @@
     <title>Minha estetica</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header-principal">
-    <div class="container-header">
-        <div class="logo">
-            <h1>BIOESTÉTICA</h1>
-        </div>
+    <section id="home">
+        <header class="header-principal">
+            <div class="container-header">
+                <div class="logo">
+                    <h1>BIOESTÉTICA</h1>
+                </div>
 
-        <nav class="menu-navegacao">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#" class="btn-contato">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
+                <nav class="menu-navegacao">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato" class="btn-contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
 <main>
-    <section class="servicos">
+    <section id="servicos" class="servicos">
     <div class="container-servicos">
         
         <article class="card-servico">
@@ -65,7 +66,7 @@
 
         </div>
 </section>
-<section class="prova-social">
+<section id="depoimentos" class="prova-social">
     <h2>O nossos clientes dizem</h2>
 
     <div class="container-depoimentos">
@@ -113,21 +114,68 @@
         </article>
     </div>
 </section>
-</main>
-    <footer class="rodape">
-        <div class="faq">
-            <details>
-                <summary>Os tratamentos estéticos causam algum tipo de dor?</summary>
-                <p>Nosso foco é o seu bem-estar. A maioria dos nossos procedimentos, como a hidratação e a máscara de ouro, são totalmente indolores e relaxantes. Em tratamentos mais profundos, utilizamos técnicas modernas e produtos específicos para garantir o seu máximo conforto do início ao fim.</p>
-                <summary>Em quantos tempo consigo ver resultados na minha pele</summary>
+      
+        </main>
+        <div id="faq" class="faq">
+            <h3>Dúvidas</h3>
+            <details class="perguntas-respostas">
+                <summary><i class="fa-solid fa-plus"></i>Os tratamentos estéticos causam algum tipo de dor?</summary>
+                <p>Nosso foco é o seu bem-estar. A maioria dos nossos procedimentos, como a hidratação e a máscara de ouro, são totalmente indolores
+                     e relaxantes. Em tratamentos mais profundos, utilizamos técnicas modernas e produtos específicos para garantir o seu máximo conforto do início ao fim.</p>
+            </details>
+            <details class="perguntas-respostas">
+                 <summary><i class="fa-solid fa-plus"></i>Em quantos tempo consigo ver resultados na minha pele</summary>
                 <p>Em quanto tempo consigo ver os resultados na minha pele?
-Isso varia de acordo com o protocolo escolhido. Na Limpeza de Pele e nas máscaras de hidratação, a luminosidade e a maciez são imediatas. Já em tratamentos voltados para o estímulo de colágeno, como a Radiofrequência, os resultados mais expressivos e duradouros aparecem gradualmente após algumas sessões.</p>
-
+                   Isso varia de acordo com o protocolo escolhido. Na Limpeza de Pele e nas máscaras de hidratação, a luminosidade e a maciez são 
+                   imediatas. Já em tratamentos voltados para o estímulo 
+                   de colágeno, como a Radiofrequência, os resultados mais expressivos e duradouros aparecem gradualmente após algumas sessões.</p>
+            </details>
+             <details class="perguntas-respostas">
+                <summary><i class="fa-solid fa-plus"></i>Preciso passar por uma avaliação antes de agendar um procedimento?</summary>
+                <p>Sim! Acreditamos que cada pele é única e tem suas próprias necessidades. Por isso, sempre realizamos uma avaliação inicial detalhada para entender o seu tipo 
+                    de pele e indicar o protocolo mais seguro e eficiente para alcançar os resultados que você deseja.</p>
+            </details>
+            <details class="perguntas-respostas">
+                <summary><i class="fa-solid fa-plus"></i>Posso tomar sol ou usar maquiagem logo após os tratamentos?</summary>
+                <p>Depende do procedimento realizado. Após um Peeling de Diamante, por exemplo, recomendamos evitar a exposição solar direta e usar protetor solar rigorosamente.
+                     Já a maquiagem costuma ser liberada algumas horas após a maioria dos nossos tratamentos de revitalização facial. Sempre te daremos todas as orientações pós-cuidado!</p>
+            </details>
+             <details class="perguntas-respostas">
+                <summary><i class="fa-solid fa-plus"></i>Qual a diferença entre a Limpeza de Pele e o Peeling de Diamante?</summary>
+                <p>A Limpeza de Pele foca na extração de cravos, espinhas e remoção de impurezas profundas. Já o Peeling de Diamante realiza uma microesfoliação que remove as células mortas
+                     da camada mais superficial, sendo ideal para clarear manchas leves, fechar poros e melhorar a textura da pele. Inclusive, para um resultado de pele de porcelana, eles costumam ser combinados!</p>
             </details>
         </div>
-        <div class="localizacao-horarios"></div>
-        <div class="sobre-nos">sobre nós</div>
-        <div class="politica-privacidade">política de privacidade</div>
-    </footer>
+        <section>
+            
+             <div class="container-localizacao-horarios">
+                <div class="localizacao">
+                    <h4>Localização</h4>
+                    <address>
+                        <strong>Rua das Flores, 123 - Centro</strong> <br>
+                            Cidade - Estado - CEP: 12345-678 <br>
+                            Whatsapp: (11) 98765-4321
+                    </address>
+                    <p class="mapa"><a href="https://goo.gl/maps/exemplo" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Ver no Google Maps</a></p>
+                </div>
+                <div class="horarios">
+                    <h4>Horários de Atendimento</h4>
+                    <p>Segunda a Sexta: 9h às 19h</p>
+                    <p>Sábado: 10h às 16h</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+        </section>
+        <section  id="sobre" class="sobre-nos">
+            <h4>Sobre Nós</h4>
+             <p class="descricao-sobre-nos">Na BIOESTÉTICA, nossa missão é realçar a beleza natural de cada 
+                cliente por meio de tratamentos estéticos personalizados e de alta qualidade.</p>
+        </section>
+    <footer class="rodape">
+            
+            
+                <p>&copy; 2026 BIOESTÉTICA. Todos os direitos reservados.</p>
+                <p>Desenvolvido por excelência em dados.</p>  
+    
+   </footer>
 </body>
 </html>
