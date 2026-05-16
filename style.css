@@ -1,18 +1,20 @@
-/* Configurações Gerais */
+/* ========================================= */
+/* CONFIGURAÇÕES GERAIS E MOBILE FIRST       */
+/* ========================================= */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #fafaf9;
 }
 
-/* CSS PARA CELULAR (Mobile First) */
-
+/* --- CABEÇALHO E MENU --- */
 .container-header {
     padding: 20px 10px;
     display: flex;
-    flex-direction: column; /* Um embaixo do outro no celular */
-    align-items: center;    /* Centraliza tudo */
-    gap: 20px;              /* Espaço entre a logo e o menu */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     background-color: #ede5db;
 }
 
@@ -26,9 +28,10 @@ body {
 
 .menu-navegacao ul {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;       /* Se não couber na linha, ele quebra */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
@@ -36,27 +39,31 @@ body {
 .menu-navegacao a {
     text-decoration: none;
     color: #444;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px; /* Ajustado tamanho base */
+    font-weight: 500;
     text-transform: uppercase;
+    transition: color 0.3s;
 }
 
-/* Estilo do botão de contato no mobile */
+.menu-navegacao a:hover {
+    color: #be123c;
+}
+
 .btn-contato {
     background-color: #be123c;
     color: white !important;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
 }
 
-/* Estilo dos Cards - MOBILE FIRST */
+/* --- SERVIÇOS --- */
 .servicos {
     padding: 40px 20px;
 }
 
 .container-servicos {
     display: flex;
-    flex-direction: column; /* No celular, um embaixo do outro */
+    flex-direction: column;
     gap: 30px;
 }
 
@@ -71,8 +78,7 @@ body {
 .card-servico img {
     width: 100%;
     height: 250px;
-    border-radius: 10px;
-    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    object-fit: cover;
 }
 
 .conteudo-card {
@@ -97,7 +103,6 @@ body {
     color: #333;
 }
 
-/* O BOTÃO DE AGENDAMENTO */
 .btn-agendar {
     display: inline-block;
     background-color: #be123c;
@@ -113,6 +118,7 @@ body {
     transform: scale(1.05);
 }
 
+/* --- PROVA SOCIAL / DEPOIMENTOS --- */
 .prova-social {
     background-color: #f0f0f0;
 }
@@ -125,43 +131,40 @@ body {
     font-size: 1.5rem;
     padding-top: 20px;
 }
+
+.container-depoimentos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
 .card-depoimentos {
     background-color: #ede5db;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 .card-depoimentos p {
     font-style: italic;
     color: #555;
     padding: 10px;
 }
 
-.container-depoimentos {
-    display: flex;
-    flex-direction: column; /* No celular, um embaixo do outro */
-    gap: 20px;
-    padding: 20px;
-}
 .estrelas {
-    color: #e6c408; /* Cor dourada para as estrelas */
+    color: #e6c408;
     padding-bottom: 10px;
     font-size: 14px;
 }
 
-.rodape {
-    display: flex;
-    gap : 20px;
-    flex-direction: column;
-    text-align: center;
-    color: #e9e3e3;
-    font-size: 30px;
-}
+/* --- FAQ --- */
 .faq {
     background-color: #f0f0f0;
     padding: 40px 20px;
     border-radius: 10px;
     margin: 30px;
 }
+
 .faq h3 {
     font-family: 'Playfair Display', serif;
     color: #be123c;
@@ -169,6 +172,7 @@ body {
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
+
 .perguntas-respostas {
     color: #150505;
     font-size: 16px;
@@ -178,6 +182,7 @@ body {
     cursor: pointer;
     box-shadow: #EDE5DB 0px 4px 10px;
 }
+
 .perguntas-respostas summary {
     list-style: none;
     font-size: 1.125rem;
@@ -188,203 +193,185 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .perguntas-respostas p {
     font-size: 1rem;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    line-height: 1.6rem;
     margin-top: 10px;
     margin-left: 15px;
     line-height: 1.5;
     padding: 20px;
     color: #696969;
 }
+
 summary i {
     font-size: 22px;
     transition: transform 0.3s ease;
 }
+
 details[open] summary i {
     transform: rotate(45deg);
 }
+
 details[open] p {
   animation: aparecer 1.4s ease-in-out;
 }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- SOBRE NOS E LOCALIZAÇÃO --- */
+#sobre {
+    background-color: #f0f0f0;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 30px;
+}
+
+.sobre-nos h4, .localizacao h4, .horarios h4 {
+    font-family: 'Playfair Display', serif;
+    color: #be123c;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.sobre-nos p, .horarios p {
+    color: #555;
+    font-size: 16px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: #EDE5DB 0px 4px 10px;
+}
+
 .localizacao {
     background-color: #f0f0f0;
     padding: 40px 20px;
     border-radius: 10px;
     margin: 30px;
 }
+
 .mapa {
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-.mapa a{
-    font-family: Monssertat, sans-serif;
+
+.mapa a {
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     border: none;
     border-radius: 10px;
     box-shadow: #EDE5DB 0px 4px 10px;
     color: #333333;
 }
-.localizacao h4 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    padding-top: 20px;
-}
-address{
+
+address {
     background-color: #be123c;
     color: #e9e3e3;
     padding: 20px;
     text-align: center;
     font-style: normal;
 }
-.horarios h4 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    padding-top: 20px;
-}   
-.horarios p {
-    color: #555;
-    font-size: 16px;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: #EDE5DB 0px 4px 10px;
-}
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.localizacao-horarios{
+
+.localizacao-horarios {
     background-color: #5a3333;
 }
-#sobre {
-    background-color: #f0f0f0;
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin: 30px;
-    
-}
-.sobre-nos h4{
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-.sobre-nos p {
-    color: #555;
-    font-size: 16px;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: #EDE5DB 0px 4px 10px;
-}
-.politica-privacidade{
+
+.politica-privacidade {
     background-color: #6c9a78;
 }
+
+/* --- RODAPÉ --- */
 .rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     background-color: #be123c;
     color: #e9e3e3;
     text-align: center;
     padding: 20px;
 }
+
 .rodape p {
     margin: 0;
     font-size: 0.8rem;
 }
+
+
+/* ========================================= */
+/* MEDIA QUERIES (Sempre no final!)          */
+/* ========================================= */
+
+/* --- TABLET (768px ou mais) --- */
 @media (min-width: 768px) {
     .container-header {
-        flex-direction: row;     /* Volta a ficar lado a lado */
+        flex-direction: row;
         justify-content: space-between;
         height: 80px;
         padding: 0 50px;
     }
-
+    .logo h1 {
+        font-size: 2rem;
+    }
     .menu-navegacao ul {
-        gap: 30px;               /* Aumenta o espaço entre os links */
+        gap: 30px;
     }
 
     .menu-navegacao a {
-        font-size: 14px;         /* Fonte levemente maior no PC */
+        font-size: 1rem;
+        font-weight: bold;
     }
-      .container-depoimentos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    padding-bottom: 20px;
-}
-}
-
-/* Estilo da Logo */
-.logo h1 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-/* Estilo do Menu */
-.menu-navegacao ul {
-    list-style: none;     /* Tira as bolinhas do li */
-    margin: 0;
-    padding: 0;
-    display: flex;        /* Coloca os li lado a lado também */
-    gap: 30px;            /* Espaço entre os links */
+    .conteudo-card h3 {
+        font-size: 1.5rem;
+    }
+    .conteudo-card p {
+        font-size: 1rem;
+    }
+    .prova-social h2 {
+        font-size: 2rem;
+    }
+    .faq h3 {
+        font-size: 2rem;
+    }
+    .container-depoimentos {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
 }
 
-.menu-navegacao a {
-    text-decoration: none;
-    color: #444;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.menu-navegacao a:hover {
-    color: #be123c;
-}
-
-/* Botão de destaque no menu */
-.btn-contato {
-    background-color: #be123c;
-    color: white !important;
-    padding: 10px 20px;
-    border-radius: 50px;
-}
-
-/* MEDIA QUERY PARA COMPUTADOR */
+/* --- COMPUTADOR (1024px ou mais) --- */
 @media (min-width: 1024px) {
+    
+    .menu-navegacao ul {
+        gap: 60px;
+    }
+    .menu-navegacao a {
+        font-weight: normal
+    }
     .container-servicos {
-        flex-direction: row; /* Lado a lado no PC */
+        flex-direction: row;
         justify-content: center;
         max-width: 1200px;
         margin: 0 auto;
     }
     
     .card-servico {
-        flex: 1; /* Todos os cards ficam com o mesmo tamanho */
+        flex: 1;
     }
-    .container-depoimentos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    padding-bottom: 20px;
+    .horarios p {
+        max-width: 400px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .sobre-nos p{
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
 }
-}
-
-/* --------------------------------------------------- */
-/* 3. @MEDIA QUERY (Para telas maiores/Desktop)        */
-/* --------------------------------------------------- */
-
