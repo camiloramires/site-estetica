@@ -5,41 +5,89 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     background-color: #fafaf9;
+    color: #333;
+    margin-top: 5.5rem;}
+
+/* Deixa os títulos encorpados e modernos */
+h1, h2, h3, h4 {
+    font-weight: 600; 
+    color: #be123c;
+    margin: 0;
 }
 
 /* --- CABEÇALHO E MENU --- */
+
+.header-principal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o cabeçalho fique por cima de todas as fotos e textos */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra elegante durante a rolagem */
+}
+
 .container-header {
-    padding: 20px 10px;
+    padding: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    flex-direction: row; /* Coloca a logo e o botão lado a lado */
+    justify-content: space-between; /* Joga um para cada ponta da tela */
+    align-items: center; /* Alinha na mesma altura vertical */
     background-color: #ede5db;
 }
 
 .logo h1 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    font-size: 24px;
-    margin: 0;
+    font-size: 1.5rem;
     letter-spacing: 2px;
 }
 
-.menu-navegacao ul {
+/* Estilo do Botão Hambúrguer (Celular) */
+.btn-menu {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #be123c;
+    cursor: pointer;
+}
+
+/* Escondendo a Lista por padrão no celular */
+/* Escondendo a Lista por padrão no celular com animação */
+.menu-lista {
+    display: flex; /* Agora ele sempre é flex, não some mais da tela */
+    opacity: 0; /* Fica 100% transparente */
+    visibility: hidden; /* Esconde para a cliente não clicar sem querer */
+    transform: translateY(-20px); /* Empurra 20px para cima */
+    transition: all 0.4s ease-in-out; /* A MÁGICA DA SUAVIDADE (0.4 segundos) */
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    background-color: #ede5db;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 0;
+    gap: 1.25rem;
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+/* Classe Mágica controlada pelo JavaScript */
+/* Classe Mágica controlada pelo JavaScript */
+.menu-lista.ativo {
+    opacity: 1; /* Aparece totalmente */
+    visibility: visible; /* Fica clicável de novo */
+    transform: translateY(0); /* Desliza suavemente de volta para a posição original */
 }
 
 .menu-navegacao a {
     text-decoration: none;
     color: #444;
-    font-size: 14px; /* Ajustado tamanho base */
+    font-size: 1rem; 
     font-weight: 500;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -52,54 +100,58 @@ body {
 .btn-contato {
     background-color: #be123c;
     color: white !important;
-    padding: 10px 20px;
-    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3.125rem; /* 50px em rem */
 }
 
 /* --- SERVIÇOS --- */
 .servicos {
-    padding: 40px 20px;
+    padding: 2.5rem 1.25rem;
 }
 
 .container-servicos {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 1.875rem; /* 30px */
 }
 
 .card-servico {
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra mais suave e premium */
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px); /* Efeito flutuante ao passar o mouse */
 }
 
 .card-servico img {
     width: 100%;
-    height: 250px;
+    height: 15.625rem; /* 250px */
     object-fit: cover;
 }
 
 .conteudo-card {
-    padding: 20px;
+    padding: 1.5rem;
 }
 
 .conteudo-card h3 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .conteudo-card p {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .preco {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
     color: #333;
 }
 
@@ -108,105 +160,97 @@ body {
     background-color: #be123c;
     color: #fff;
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: transform 0.2s;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3.125rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 .btn-agendar:hover {
-    transform: scale(1.05);
+    background-color: #9f0f32; /* Cor um pouco mais escura no hover */
 }
 
 /* --- PROVA SOCIAL / DEPOIMENTOS --- */
 .prova-social {
     background-color: #f0f0f0;
+    padding: 2.5rem 0;
 }
 
 .prova-social h2 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    padding-top: 20px;
 }
 
 .container-depoimentos {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25rem;
+    padding: 0 1.25rem;
 }
 
 .card-depoimentos {
     background-color: #ede5db;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 1.5rem;
 }
 
 .card-depoimentos p {
     font-style: italic;
     color: #555;
-    padding: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .estrelas {
     color: #e6c408;
-    padding-bottom: 10px;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 /* --- FAQ --- */
 .faq {
     background-color: #f0f0f0;
-    padding: 40px 20px;
-    border-radius: 10px;
-    margin: 30px;
+    padding: 2.5rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 1.875rem 1.25rem;
 }
 
 .faq h3 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
 
 .perguntas-respostas {
-    color: #150505;
-    font-size: 16px;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.625rem;
     cursor: pointer;
-    box-shadow: #EDE5DB 0px 4px 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
 .perguntas-respostas summary {
     list-style: none;
     font-size: 1.125rem;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    color: #722F37;
+    color: #be123c;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .perguntas-respostas p {
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-    margin-left: 15px;
-    line-height: 1.5;
-    padding: 20px;
-    color: #696969;
+    font-size: 0.9375rem;
+    color: #666;
+    margin-top: 1rem;
+    margin-left: 1.875rem;
+    line-height: 1.6;
 }
 
 summary i {
-    font-size: 22px;
+    font-size: 1.25rem;
     transition: transform 0.3s ease;
 }
 
@@ -215,7 +259,7 @@ details[open] summary i {
 }
 
 details[open] p {
-  animation: aparecer 1.4s ease-in-out;
+  animation: aparecer 0.5s ease-in-out;
 }
 
 @keyframes aparecer {
@@ -223,155 +267,183 @@ details[open] p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- SOBRE NOS E LOCALIZAÇÃO --- */
-#sobre {
-    background-color: #f0f0f0;
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin: 30px;
+/* --- SOBRE NÓS E LOCALIZAÇÃO --- */
+.container-localizacao-horarios {
+    background-color: #ede5db; /* Removi as cores misturadas que quebravam o layout */
+    padding: 2.5rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 1.875rem 1.25rem;
 }
 
-.sobre-nos h4, .localizacao h4, .horarios h4 {
-    font-family: 'Playfair Display', serif;
-    color: #be123c;
+.localizacao, .horarios {
+    margin-bottom: 2rem;
+}
+
+.localizacao h4, .horarios h4 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     font-size: 1.5rem;
 }
 
-.sobre-nos p, .horarios p {
+.horarios p {
+    background-color: #fff;
     color: #555;
-    font-size: 16px;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: #EDE5DB 0px 4px 10px;
-}
-
-.localizacao {
-    background-color: #f0f0f0;
-    padding: 40px 20px;
-    border-radius: 10px;
-    margin: 30px;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 0.625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .mapa {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding-top: 1.25rem;
 }
 
 .mapa a {
-    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    box-shadow: #EDE5DB 0px 4px 10px;
-    color: #333333;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    color: #333;
+    font-weight: 500;
 }
 
 address {
     background-color: #be123c;
-    color: #e9e3e3;
-    padding: 20px;
+    color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     text-align: center;
     font-style: normal;
+    line-height: 1.6;
 }
 
-.localizacao-horarios {
-    background-color: #5a3333;
+.sobre-nos {
+    background-color: #f0f0f0;
+    padding: 2.5rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 1.875rem 1.25rem;
 }
 
-.politica-privacidade {
-    background-color: #6c9a78;
+.descricao-sobre-nos {
+    background-color: #fff;
+    color: #555;
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* --- RODAPÉ --- */
 .rodape {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0.625rem;
     background-color: #be123c;
-    color: #e9e3e3;
+    color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 1.875rem;
 }
 
 .rodape p {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
-
 
 /* ========================================= */
 /* MEDIA QUERIES (Sempre no final!)          */
 /* ========================================= */
 
-/* --- TABLET (768px ou mais) --- */
-@media (min-width: 768px) {
+/* --- TABLET (48rem = 768px ou mais) --- */
+@media (min-width: 48rem) {
+    
+    .btn-menu {
+        display: none; 
+    }
+
+    .menu-lista {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        width: auto;
+        padding: 0;
+        position: static; /* Desliga o efeito flutuante nas telas grandes */
+        box-shadow: none; /* Remove a sombra do menu flutuante */
+        gap: 1.875rem;
+    }
+    
     .container-header {
         flex-direction: row;
         justify-content: space-between;
-        height: 80px;
-        padding: 0 50px;
+        padding: 1.25rem 3rem;
     }
+    
     .logo h1 {
         font-size: 2rem;
     }
-    .menu-navegacao ul {
-        gap: 30px;
-    }
 
-    .menu-navegacao a {
-        font-size: 1rem;
-        font-weight: bold;
-    }
-    .conteudo-card h3 {
-        font-size: 1.5rem;
-    }
-    .conteudo-card p {
-        font-size: 1rem;
-    }
-    .prova-social h2 {
-        font-size: 2rem;
-    }
-    .faq h3 {
-        font-size: 2rem;
-    }
     .container-depoimentos {
         flex-direction: row;
         justify-content: space-between;
-        padding-bottom: 20px;
+    }
+
+    .card-depoimentos {
+        flex: 1;
+    }
+    .menu-lista {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        width: auto;
+        padding: 0;
+        position: static; 
+        box-shadow: none; 
+        gap: 1.875rem;
+        
+        /* Reseta a animação para as telas grandes: */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 }
 
-/* --- COMPUTADOR (1024px ou mais) --- */
-@media (min-width: 1024px) {
+/* --- COMPUTADOR (64rem = 1024px ou mais) --- */
+@media (min-width: 64rem) {
     
-    .menu-navegacao ul {
-        gap: 60px;
+    .menu-lista {
+        gap: 2.5rem;
     }
-    .menu-navegacao a {
-        font-weight: normal
-    }
+    
     .container-servicos {
         flex-direction: row;
         justify-content: center;
-        max-width: 1200px;
+        max-width: 75rem; /* 1200px */
         margin: 0 auto;
     }
     
     .card-servico {
         flex: 1;
     }
-    .horarios p {
-        max-width: 400px;
-        margin: 20px auto;
-        text-align: center;
+
+    .container-localizacao-horarios {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        max-width: 75rem;
+        margin: 1.875rem auto;
     }
-    .sobre-nos p{
-        max-width: 1000px;
+
+    .localizacao, .horarios {
+        flex: 1;
+        margin: 0 1.25rem;
+    }
+    
+    .descricao-sobre-nos {
+        max-width: 60rem;
         margin: 0 auto;
-        text-align: center;
     }
 }
